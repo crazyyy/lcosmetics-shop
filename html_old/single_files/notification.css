@@ -1,0 +1,34 @@
+/************************************ThemeGlobal Notificatioin for add to Cart, Wishlist, Compare*********************************************************/	
+.ui-notify-click { cursor:pointer }
+.ui-notify-close { color:black; text-decoration:underline }
+.ui-notify-cross { text-indent: -9999px;margin-top:9px; margin-right:20px;float:right; cursor:pointer;  background: url("../image/tg-remove.png") no-repeat; height: 17px; width: 17px; display: inline-block;}
+.ui-notify {position:fixed;z-index:1000;top:20px;right:20px; }
+.ui-notify .ui-notify-message{ 
+position:relative; 	width:280px; 
+	background:#fff;
+	margin-bottom:20px;}
+
+	h2.icon_success{
+    border: 1px solid #DADADA;
+    color: #000000;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 13px;
+    padding: 9px 20px;
+    text-transform: uppercase;
+	margin: 0px;
+	 font-family: 'PT Sans','sans-serif';
+	}
+	.ui-notify .style_text{
+	overflow:hidden;
+	padding:20px;
+	border: 1px solid #DADADA;
+	border-top: none;}
+	.ui-notify .style_text img{
+	float:left;margin-right:20px;}
+	.ui-notify .style_text h3{
+	font-size:13px;color:#53565A; font-weight: 400; 
+	text-align:left;text-transform: none;
+	line-height:20px; margin-top:0}
+	.ui-notify .style_text h3 a{color:#EF2743;font-size: 13px!important; }
+	.ui-notify .style_text h3 a:first-child { color:#EF2743; font-size: 13px!important;}
