@@ -5,154 +5,202 @@
  * Copyright 2011, Gilbert Pellegrom
  * Free to use and abuse under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * March 2010
  */
 /* The Nivo Slider styles */
+
 .slideshow {
-	border:1px solid #DBDEE1;
-	margin-bottom: 20px;
-	padding: 3px;
-	-webkit-border-radius: 3px 3px 3px 3px;
-	-moz-border-radius: 3px 3px 3px 3px;
-	-khtml-border-radius: 3px 3px 3px 3px;
-	border-radius: 3px 3px 3px 3px;
+  margin-bottom: 20px;
+  padding: 3px;
+
+  border: 1px solid #dbdee1;
+  -webkit-border-radius: 3px 3px 3px 3px;
+     -moz-border-radius: 3px 3px 3px 3px;
+          border-radius: 3px 3px 3px 3px;
+
+  -khtml-border-radius: 3px 3px 3px 3px;
 }
+
 .nivoSlider {
-	position: relative;
+  position: relative;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  a.nivo-imageLink {
+    position: absolute;
+    z-index: 6;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+  }
 }
-.nivoSlider img {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-}
+
 /* If an image is wrapped in a link */
-.nivoSlider a.nivo-imageLink {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	height: 100%;
-	border: 0;
-	padding: 0;
-	margin: 0;
-	z-index: 6;
-	display: none;
-}
+
 /* The slices and boxes in the Slider */
+
 .nivo-slice {
-	display:block;
-	position:absolute;
-	z-index:5;
-	height:100%;
+  position: absolute;
+  z-index: 5;
+
+  display: block;
+
+  height: 100%;
 }
+
 .nivo-box {
-	display:block;
-	position:absolute;
-	z-index:5;
+  position: absolute;
+  z-index: 5;
+
+  display: block;
 }
+
 /* Caption styles */
+
 .nivo-caption {
-	position:absolute;
-	left:0px;
-	bottom:0px;
-	background:#000;
-	color:#fff;
-	opacity:0.8; /* Overridden by captionOpacity setting */
-	width:100%;
-	z-index:8;
+  position: absolute;
+  z-index: 8;
+  bottom: 0;
+  left: 0;
+  /* Overridden by captionOpacity setting */
+
+  width: 100%;
+
+  opacity: .8;
+  color: #fff;
+  background: #000;
+  p {
+    margin: 0;
+    padding: 5px;
+  }
+  a {
+    display: inline !important;
+  }
 }
-.nivo-caption p {
-	padding:5px;
-	margin:0;
-}
-.nivo-caption a {
-	display:inline !important;
-}
+
 .nivo-html-caption {
-	display:none;
+  display: none;
 }
+
 /* Direction nav styles (e.g. Next & Prev) */
+
 .nivo-directionNav a {
-	position:absolute;
-	top:45%;
-	z-index:9;
-	cursor:pointer;
+  position: absolute;
+  z-index: 9;
+  top: 45%;
+
+  cursor: pointer;
 }
+
 .nivo-prevNav {
-	left:0px;
+  left: 0;
 }
+
 .nivo-nextNav {
-	right:0px;
+  right: 0;
 }
+
 /* Control nav styles (e.g. 1,2,3...) */
+
 .nivo-controlNav a {
-	position:relative;
-	z-index:9;
-	cursor:pointer;
+  position: relative;
+  z-index: 9;
+
+  cursor: pointer;
+  &.active {
+    font-weight: bold;
+  }
 }
-.nivo-controlNav a.active {
-	font-weight:bold;
-}
+
 /* slider theme */
 
-.slideshow .nivoSlider {
-	position: relative;
-	background: #fff url('../image/loading.gif') no-repeat 50% 50%;	
-	margin-bottom: 20px;
-}
-.slideshow .nivoSlider img {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	display: none;
-}
-.slideshow .nivoSlider a {
-	border: 0;
-	display: block;
-}
-.slideshow .nivo-controlNav {
-	position: absolute;
-	right: 10px;
-	bottom: 5px;
-	text-align: center;
-	height: 22px;
-	z-index: 99;
-}
-.slideshow .nivo-controlNav a {
-	vertical-align: top;
-	display: block;
-	width: 22px;
-	height: 22px;
-	background: url('../image/bullets.png') no-repeat;
-	text-indent:-9999px;
-	border:0;
-	margin-right:3px;
-	float:left;
-}
-.slideshow .nivo-controlNav a.active {
-	background-position:0 -22px;
-}
-.slideshow .nivo-directionNav a {
-	display:block;
-	width:30px;
-	height:30px;
-	background:url('../image/arrows.png') no-repeat;
-	text-indent:-9999px;
-	border:0;
-}
-.slideshow a.nivo-nextNav {
-	background-position:-30px 0;
-	right:15px;
-}
-.slideshow a.nivo-prevNav {
-	left:15px;
-}
-.slideshow .nivo-caption {
-	text-shadow:none;
-	font-family: Helvetica, Arial, sans-serif;
-}
-.slideshow .nivo-caption a {
-	color:#efe9d1;
-	text-decoration:underline;
+.slideshow {
+  .nivoSlider {
+    position: relative;
+
+    margin-bottom: 20px;
+
+    background: #fff url('../image/loading.gif') no-repeat 50% 50%;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      display: none;
+    }
+    a {
+      display: block;
+
+      border: 0;
+    }
+  }
+  .nivo-controlNav {
+    position: absolute;
+    z-index: 99;
+    right: 10px;
+    bottom: 5px;
+
+    height: 22px;
+
+    text-align: center;
+    a {
+      display: block;
+      float: left;
+
+      width: 22px;
+      height: 22px;
+      margin-right: 3px;
+
+      vertical-align: top;
+      text-indent: -9999px;
+
+      border: 0;
+      background: url('../image/bullets.png') no-repeat;
+      &.active {
+        background-position: 0 -22px;
+      }
+    }
+  }
+  .nivo-directionNav a {
+    display: block;
+
+    width: 30px;
+    height: 30px;
+
+    text-indent: -9999px;
+
+    border: 0;
+    background: url('../image/arrows.png') no-repeat;
+  }
+  a {
+    &.nivo-nextNav {
+      right: 15px;
+
+      background-position: -30px 0;
+    }
+    &.nivo-prevNav {
+      left: 15px;
+    }
+  }
+  .nivo-caption {
+    font-family: Helvetica, Arial, sans-serif;
+
+    text-shadow: none;
+    a {
+      text-decoration: underline;
+
+      color: #efe9d1;
+    }
+  }
 }

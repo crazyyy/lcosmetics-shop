@@ -1,87 +1,106 @@
-.jcarousel55-skin-opencart .jcarousel55-container {
-	background: #FFF;
-	margin-bottom: 40px;
-	padding-top: 20px!important;
-}
-.jcarousel55-skin-opencart .jcarousel55-direction-rtl {
-	direction: rtl;
-}
-.jcarousel55-skin-opencart .jcarousel55-container-horizontal {
-	padding: 0px 0px;
-}
-.jcarousel55-skin-opencart .jcarousel55-clip {
-	overflow: hidden;
-	width: 100%;
-}
-.jcarousel55-skin-opencart .jcarousel55-clip-horizontal {
-}
-.jcarousel55-skin-opencart .jcarousel55-item {
-	text-align: center;
-}
-.jcarousel55-skin-opencart .jcarousel55-item a {
-	color: #53565A;
-	font-size: 12px;
-}
-.jcarousel55-skin-opencart .jcarousel55-item a:hover {
-	color: #EF2743;
+.jcarousel55-skin-opencart {
+  .jcarousel55-container {
+    margin-bottom: 40px;
+    padding-top: 20px !important;
+
+    background: #fff;
+  }
+  .jcarousel55-direction-rtl {
+    direction: rtl;
+  }
+  .jcarousel55-container-horizontal {
+    padding: 0 0;
+  }
+  .jcarousel55-clip {
+    overflow: hidden;
+
+    width: 100%;
+  }
+  .jcarousel55-item {
+    text-align: center;
+    a {
+      font-size: 12px;
+
+      color: #53565a;
+      &:hover {
+        color: #ef2743;
+      }
+    }
+  }
+  .jcarousel55-item-horizontal {
+    margin-right: 10px;
+    margin-left: 0;
+  }
+  .jcarousel55-direction-rtl .jcarousel55-item-horizontal {
+    margin-right: 0;
+    margin-left: 10px;
+  }
+  .jcarousel55-item-placeholder {
+    color: #000;
+    background: #fff;
+  }
+  .jcarousel55-next-horizontal {
+    position: absolute;
+    top: 60px;
+    right: 0;
+
+    width: 21px;
+    height: 21px;
+
+    cursor: pointer;
+
+    background: url('../image/button-next-1.png') center no-repeat;
+  }
+  .jcarousel55-direction-rtl .jcarousel55-next-horizontal {
+    right: auto;
+    left: 5px;
+
+    background: url('../image/button-previous.png') center no-repeat;
+  }
+  .jcarousel55-next-disabled-horizontal {
+    cursor: default;
+
+    background: url('../image/button-next.png') center no-repeat !important;
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: default;
+
+      background: url('../image/button-next.png') center no-repeat !important;
+    }
+  }
+  .jcarousel55-prev-horizontal {
+    position: absolute;
+    top: 60px;
+    left: 0;
+
+    width: 21px;
+    height: 21px;
+
+    cursor: pointer;
+
+    background: url('../image/button-prev-1.png') center no-repeat;
+  }
+  .jcarousel55-direction-rtl .jcarousel55-prev-horizontal {
+    right: 0;
+    left: auto;
+
+    background: url('../image/button-next.png') center no-repeat;
+  }
+  .jcarousel55-prev-disabled-horizontal {
+    cursor: default;
+
+    background: url('../image/button-prev.png') center no-repeat !important;
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: default;
+
+      background: url('../image/button-prev.png') center no-repeat !important;
+    }
+  }
 }
 
-.jcarousel55-skin-opencart .jcarousel55-item-horizontal {
-	margin-left: 0;
-	margin-right: 10px;
-}
-.jcarousel55-skin-opencart .jcarousel55-direction-rtl .jcarousel55-item-horizontal {
-	margin-left: 10px;
-	margin-right: 0;
-}
-.jcarousel55-skin-opencart .jcarousel55-item-placeholder {
-	background: #fff;
-	color: #000;
-}
 /**
  *  Horizontal Buttons
  */
-.jcarousel55-skin-opencart .jcarousel55-next-horizontal {
-	position: absolute;
-	top: 60px;
-	right: 0px;
-	width: 21px;
-	height: 21px;
-	cursor: pointer;
-	background: url('../image/button-next-1.png') center no-repeat;
-}
-.jcarousel55-skin-opencart .jcarousel55-direction-rtl .jcarousel55-next-horizontal {
-	left: 5px;
-	right: auto;
-	background: url('../image/button-previous.png') center no-repeat;
-}
-.jcarousel55-skin-opencart .jcarousel55-next-horizontal:hover, .jcarousel55-skin-opencart .jcarousel55-next-horizontal:focus {
-}
-.jcarousel55-skin-opencart .jcarousel55-next-horizontal:active {
-}
-.jcarousel55-skin-opencart .jcarousel55-next-disabled-horizontal, .jcarousel55-skin-opencart .jcarousel55-next-disabled-horizontal:hover, .jcarousel55-skin-opencart .jcarousel55-next-disabled-horizontal:focus, .jcarousel55-skin-opencart .jcarousel55-next-disabled-horizontal:active {
-	cursor: default;
-	background: url('../image/button-next.png') center no-repeat!important;
-}
-.jcarousel55-skin-opencart .jcarousel55-prev-horizontal {
-	position: absolute;
-	top: 60px;
-	left: 0px;
-	width: 21px;
-	height: 21px;
-	cursor: pointer;
-	background: url('../image/button-prev-1.png') center no-repeat;
-}
-.jcarousel55-skin-opencart .jcarousel55-direction-rtl .jcarousel55-prev-horizontal {
-	left: auto;
-	right: 0px;
-	background: url('../image/button-next.png') center no-repeat;
-}
-.jcarousel55-skin-opencart .jcarousel55-prev-horizontal:hover, .jcarousel55-skin-opencart .jcarousel55-prev-horizontal:focus {
-}
-.jcarousel55-skin-opencart .jcarousel55-prev-horizontal:active {
-}
-.jcarousel55-skin-opencart .jcarousel55-prev-disabled-horizontal, .jcarousel55-skin-opencart .jcarousel55-prev-disabled-horizontal:hover, .jcarousel55-skin-opencart .jcarousel55-prev-disabled-horizontal:focus, .jcarousel55-skin-opencart .jcarousel55-prev-disabled-horizontal:active {
-	cursor: default;
-	background: url('../image/button-prev.png') center no-repeat!important;
-}
