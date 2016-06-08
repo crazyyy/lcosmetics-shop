@@ -1,0 +1,23 @@
+@import 'stylesheet';
+@import 'menu';
+@import 'slider';
+@import 'notification';
+@import 'fonts_1';
+@import 'fonts_2';
+@import 'fonts_3';
+@import 'fonts_4';
+@import 'slideshow';
+@import 'jquery-ui-1.8.16';
+
+
+
+.new_element_1_1 {
+  font-family: Open Sans;
+  font-size: 100%;
+  line-height: 1.3;
+
+  width: auto;
+}
+.slider-container-1 {
+  max-height: 600px !important;
+}
