@@ -15,8 +15,7 @@
   padding: 3px;
 
   border: 1px solid #dbdee1;
-  -webkit-border-radius: 3px 3px 3px 3px;
-     -moz-border-radius: 3px 3px 3px 3px;
+
           border-radius: 3px 3px 3px 3px;
 
   -khtml-border-radius: 3px 3px 3px 3px;
@@ -131,7 +130,7 @@
 
     margin-bottom: 20px;
 
-    background: #fff url('../image/loading.gif') no-repeat 50% 50%;
+    background: #fff url('../img/loading.gif') no-repeat 50% 50%;
     img {
       position: absolute;
       top: 0;
@@ -166,7 +165,7 @@
       text-indent: -9999px;
 
       border: 0;
-      background: url('../image/bullets.png') no-repeat;
+      background: url('../img/bullets.png') no-repeat;
       &.active {
         background-position: 0 -22px;
       }
@@ -181,7 +180,7 @@
     text-indent: -9999px;
 
     border: 0;
-    background: url('../image/arrows.png') no-repeat;
+    background: url('../img/arrows.png') no-repeat;
   }
   a {
     &.nivo-nextNav {

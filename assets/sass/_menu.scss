@@ -216,8 +216,7 @@ ul.megamenu > li {
 ul {
   &.megamenu {
     li .sub-menu .content {
-      -webkit-box-sizing: content-box !important;
-         -moz-box-sizing: content-box !important;
+
               box-sizing: content-box !important;
       padding: 20px;
 
