@@ -48,16 +48,6 @@ class AIOWPSecurity_Scan
         global $aio_wp_security;
         if ( $aio_wp_security->configs->get_value('aiowps_send_fcd_scan_email') == '1' ) 
         {
-            //Get the right email address.
-            if ( is_email( $aio_wp_security->configs->get_value('aiowps_fcd_scan_email_address') ) ) 
-            {
-                    $toaddress = $aio_wp_security->configs->get_value('aiowps_fcd_scan_email_address');
-            } else 
-            {
-                    $toaddress = get_site_option( 'admin_email' );
-            }
-
-            $to = $toaddress;
             $site_title = get_bloginfo( 'name' );
             $from_name = empty($site_title)?'WordPress':$site_title;
             
@@ -76,10 +66,28 @@ class AIOWPSecurity_Scan
             $message .= $scan_results_message;
             $message .= "\r\n".__( 'Login to your site to view the scan details.', 'all-in-one-wp-security-and-firewall' );
 
-            $sendMail = wp_mail( $to, $subject, $message, $headers );
-            if(FALSE === $sendMail){
-                $aio_wp_security->debug_logger->log_debug("File change notification email failed to send to ".$to,4);
+            //Get the email address(es).
+            $addresses = $aio_wp_security->configs->get_value('aiowps_fcd_scan_email_address');
+            if ( empty( $addresses ) )
+            {
+                $toaddress = get_site_option( 'admin_email' );
+                $sendMail = wp_mail( $toaddress, $subject, $message, $headers );
+                if(FALSE === $sendMail){
+                    $aio_wp_security->debug_logger->log_debug("File change notification email failed to send to ".$toaddress,4);
+                }
+
+            } else
+            {
+                $email_list_array = explode(PHP_EOL, $addresses);
+                foreach($email_list_array as $key=>$value){
+                    $toaddress = $value;
+                    $sendMail = wp_mail( $toaddress, $subject, $message, $headers );
+                    if(FALSE === $sendMail){
+                        $aio_wp_security->debug_logger->log_debug("File change notification email failed to send to ".$toaddress,4);
+                    }
+                }
             }
+
         }
     }
     
@@ -202,6 +210,7 @@ class AIOWPSecurity_Scan
         $file_types_to_skip = $aio_wp_security->configs->get_value('aiowps_fcd_exclude_filetypes');
 
         foreach ($rit as $fileinfo) {
+            if ($fileinfo->getFilename() == "..") continue; //skip .. directories
             if ($fileinfo->isDir()) continue; //skip directories
             if ($fileinfo->getFilename() == 'wp-security-log-cron-job.txt' || $fileinfo->getFilename() == 'wp-security-log.txt') continue; //skip aiowps log files
             //Let's omit any file types from the scan which were specified in the settings if necessary
